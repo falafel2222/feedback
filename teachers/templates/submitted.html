@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'teachers/style.css' %}" />
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teacher Feedback</title>
+        <link rel="stylesheet" href ="css/main.css">
+    </head>
+
+    <body>
+		<div class = "navbar">
+			<ul class = "navbar-ul">
+				<li class = "navbar-li"><img src="{% static 'teachers/images/logo3.png' %}" width="150" height="50"/></li>
+				<li class = "navbar-li"><a href = /> Home </a></li>
+				<li class = "navbar-li"><a href = message.html>Give Feedback </a></li>
+				<li  class = "navbar-li"><a href = login.html> Log in </a></li>
+			</ul>
+		</div>
+        <div class = "box1">
+            <p> Thank you for your feedback! </p>
+            <p><a href = message.html>Write another</a></p>
+        </div>
+    </body>
+
+</html>

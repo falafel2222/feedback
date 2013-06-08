@@ -1,0 +1,141 @@
+
+* {
+    * margin: 0;
+}
+
+
+html, body { 
+	font-family: 'Droid Serif';
+    padding-top: 00%;
+    background-color: #000062;
+}
+
+.navbar {
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:2%;
+	color: #6FCCE3;
+	background-color:#1111A9;
+	width:80%;
+	font-size: 2em;
+	border-radius: 5px;
+	
+}
+
+.logospot {
+	margin-left: 05%;
+	margin-top: 02%;
+}
+h1 {
+	font-size: 2em;
+	font-style: itallic;
+	text-align: center;
+}
+.box0 {
+    margin-top:10%;
+    margin-left:10%;
+    margin-right:10%;
+    padding:.2em;
+    font-size:1em;
+    color:white;
+    background-color:#1111A9;
+    width: 20em;
+    border-radius: 5px;    
+}
+.box1 {
+    margin-top:10%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6em;
+    color: white;
+    background-color:#1111A9;
+    width: 15em;
+    text-align:center;
+    border-radius: 15px;
+}
+.topbox {
+	text-align:center;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:4%;
+	color: #6FCCE3;
+	background-color:#1111A9;
+	width:70%;
+	font-size: 2em;
+	border-radius: 5px;
+}
+.box2left {
+    margin-top:1%;
+    margin-left: 15%;
+    margin-right: 0%;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1em;
+    color: #6FCCE3;
+    background-color:#1111A9;
+    width: 23em;
+    text-align:left;
+    border-radius: 15px;
+}
+.box2right {
+    margin-top:1%;
+    margin-left: 0%;
+    margin-right: 15%;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: 1em;
+    color: #6FCCE3;
+    background-color:#1111A9;
+    width: 23em;
+    text-align:left;
+    border-radius: 15px;
+}
+
+.box3 {
+    margin-top:10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    font-size: 1em;
+    color: white;
+    background-color:#1111A9;
+    width: 40em;
+    text-align:left;
+    border-radius: 15px;
+}
+
+/*link styles*/
+.message {
+	background-color:#3333C3;
+	text-align: left;
+	margin-right:2px;
+	margin-left: 2px;
+	padding-left:2em;
+	padding-right:0;
+	margin-bottom: 2px;
+}
+.navbar-ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+.navbar-li
+{
+	float:left;
+}
+a:link,a:visited
+{
+display:block;
+width:250px;
+font-weight:bold;
+color:#6FCCE3;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+a:hover,a:active
+{
+color:#6F92E3;
+}

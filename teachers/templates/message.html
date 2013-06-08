@@ -1,0 +1,133 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'teachers/style.css' %}" />
+
+<!DOCTYPE html>
+<html>
+	<style>
+		header, section {
+			display: block;
+		}
+		body {
+			font-family: 'Droid Serif';
+		}
+		h1, h2 {
+			text-align: center;
+			font-weight: normal;
+		}
+		#features {
+			margin: auto;
+			width: 460px;
+			font-size: 0.9em;
+		}
+		.connected, .sortable, .exclude, .handles {
+			margin: auto;
+			padding: 0;
+			width: 310px;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		.sortable.grid {
+			overflow: hidden;
+		}
+		.connected li, .sortable li, .exclude li, .handles li {
+			list-style: none;
+			border: 1px solid #CCC;
+			background: #F6F6F6;
+			font-family: "Tahoma";
+			color: #1C94C4;
+			margin: 5px;
+			padding: 5px;
+			height: 22px;
+		}
+		.handles span {
+			cursor: move;
+		}
+		li.disabled {
+			opacity: 0.5;
+		}
+		.sortable.grid li {
+			line-height: 80px;
+			float: left;
+			width: 80px;
+			height: 80px;
+			text-align: center;
+		}
+		li.highlight {
+			background: #FEE25F;
+		}
+		#connected {
+			width: 440px;
+			overflow: hidden;
+			margin: auto;
+		}
+		.connected {
+			float: left;
+			width: 200px;
+		}
+		.connected.no2 {
+			float: right;
+		}
+		li.sortable-placeholder {
+			border: 1px dashed #CCC;
+			background: none;
+		}
+	</style>
+    <head>
+        <title>Teacher Feedback</title>
+        <link rel="stylesheet" href ="css/main.css">
+    </head>
+
+    <body>
+		<div class = "navbar">
+			<ul class = "navbar-ul">
+				<li class = "navbar-li"><img src="{% static 'teachers/images/logo3.png' %}" width="150" height="50"/></li>
+				<li class = "navbar-li"><a href = /> Home </a></li>
+				<li class = "navbar-li"><a href = message.html>Give Feedback </a></li>
+				<li  class = "navbar-li"><a href = login.html> Log in </a></li>
+			</ul>
+		</div>
+		<form action="/submitted" method="post">
+			<div class = "topbox">
+				{% csrf_token %}
+				New feedback for <select name="teacher"> 
+					<option value="">select teacher</option>
+					<!--<option value="ppinza">Paul Pinza</option>
+					<option value="spierson">Scott Pierson</option>-->
+					{%for teacher in teachers%}
+						<option value="{{teacher.username}}">{{teacher.first_name}} {{teacher.last_name}}</option>
+					{%endfor%}
+				</select>
+			</div>
+			<div class = "box2left" style="float:left">
+				<h2>Rank your teacher's strengths and weaknesses</h2>
+				<p>Drag the boxes below to order the categories from top to bottom, top being the best and bottom being the worst</p>
+				 <ul class="sortable">
+					<li>Engages All Students</li>
+					<li>Organizes educational material well</li>
+					<li>Constantly improves curriculum</li>
+					<li>Gives reasonable comprehensive tests</li>
+					<li>Makes sure all students are learning</li>
+					<li>Creates a beneficial learning environment</li>
+				</ul>
+			</div>
+			<div class = "box2right" style="float:right">
+				<h2>Write a Constructive Message</h2>
+				<p>This is for comments on specific parts of a class. Examples could include:</p>
+				<ul>
+					<li>"Could you write more detailed comments on essays?"</li>
+					<li>"The in-class review on the Vietnam war was really helpful"</li>
+					<li>"Several classmates and I had trouble understanding angular momentum. Could you do a review lecture before the test?"</li>
+				</ul>
+				{% csrf_token %}
+				<textarea name = 'content' rows='6' cols='40'></textarea>
+				<input type="submit" value="Submit" />>
+			</div>
+		</form>
+    </body>
+
+</html>
